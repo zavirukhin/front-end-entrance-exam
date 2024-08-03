@@ -22,6 +22,13 @@ header > img, .container-cv, .container-languages {
 main {
   display: flex;
   gap: 20px;
+  margin-bottom: 20px;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
 }
 
 h1 {
@@ -65,6 +72,12 @@ h3 {
 .font-10p-m-104lh {
   font-size: 10px;
   line-height: 104%;
+}
+
+.font-10p-r-150lh {
+  font-size: 10px;
+  line-height: 150%;
+  font-weight: 400;
 }
 
 .font-8p-m-150lh {
@@ -114,7 +127,7 @@ h3 {
   gap: 10px;
 }
 
-.container-job {
+.container-small {
   display: flex;
   gap: 8px;
   border-radius: 10px;
@@ -123,12 +136,12 @@ h3 {
   background: #fff;
 }
 
-.container-job:first-of-type {
+.experiences-list > .container-small:first-of-type, .education-wrapper:first-of-type > .container-small {
   background: #28D979;
   color: #fff;
 }
 
-.job-time {
+.container-small-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -212,12 +225,98 @@ h3 {
   margin-left: 7px;
 }
 
+.education-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+  margin-top: -4px;
+  column-gap: 2px;
+}
+
+.education-description {
+  display: grid;
+  grid-template-columns: minmax(116px, auto) minmax(116px, auto);
+  column-gap: 16px;
+  row-gap: 12px;
+}
+
+.education-tag-list-text-color {
+  color: #149063;
+}
+
+.interest-list {
+  display: flex;
+  gap: 8px;
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.interest-list > li {
+  background: #fff;
+  padding: 4px 10px;
+  border-radius: 40px;
+}
+
+.combine-interest-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.container-contact {
+  height: 100%;
+  background: #000;
+  color: #fff;
+  gap: 11px;
+}
+
+.container-contact > a {
+  text-decoration-line: none;
+  color: #fff;
+}
+
 @media screen and (max-width: 590px) {
+  main {
+    flex-direction: column;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+
   .container-cv {
     flex: 1;
   }
 
   .container-languages {
     flex-basis: 100%;
+  }
+
+  .container-tools {
+    padding: 12px;
+  }
+
+  .tools-list {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .img-tools {
+    min-height: 111px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .job-description {
+    grid-template-columns: auto auto;
+  }
+
+  .education-description {
+    grid-template-columns: auto;
   }
 }
