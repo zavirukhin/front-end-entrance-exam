@@ -15,8 +15,12 @@ header {
   margin-bottom: 20px;
 }
 
-header > img, .container-cv, .container-languages {
+header > img {
   height: 124px;
+}
+
+.container-cv, .container-languages {
+  min-height: 124px;
 }
 
 main {
@@ -27,7 +31,7 @@ main {
 
 footer {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: calc(50% - 10px) calc(50% - 10px);
   column-gap: 20px;
 }
 
@@ -108,7 +112,7 @@ h3 {
 
 .languages-list {
   display: grid;
-  grid-template-columns: min-content auto;
+  grid-template-columns: 58px auto;
   align-items: center;
   grid-column-gap: 17px;
   grid-row-gap: 10px;
@@ -142,15 +146,20 @@ h3 {
 }
 
 .container-small-header {
-  display: flex;
+  display: grid;
   justify-content: space-between;
   align-items: center;
+  grid-template-columns: 100% min-content;
+  gap: 4px;
 }
 
 .job-current-mark {
   padding: 2px 6px;
   background: rgb(126, 155, 18, 0.4);
   border-radius: 59px;
+  width: 61px;
+  overflow: hidden;
+  text-wrap: nowrap;
 }
 
 .job-position {
@@ -160,12 +169,13 @@ h3 {
 
 .position-name {
   display: flex;
+  flex-wrap: wrap;
   gap: 6px;
 }
 
 .job-description {
   display: grid;
-  grid-template-columns: 124px auto;
+  grid-template-columns: 124px calc(100% - 132px);
   column-gap: 8px;
 }
 
@@ -176,6 +186,7 @@ h3 {
 }
 
 .container-tools {
+  width: 124px;
   padding: 12px 12px 3px 12px;
 }
 
@@ -203,6 +214,7 @@ h3 {
 }
 
 .img-tools > h3 {
+  max-width: 100%;
   position: absolute;
   transform: translate(-50%, -50%);
   left: 50%;
@@ -212,6 +224,7 @@ h3 {
   border-radius: 59px;
   padding: 2px 6px;
   text-wrap: nowrap;
+  overflow: hidden;
 }
 
 .img-tool-block {
@@ -233,6 +246,7 @@ h3 {
   list-style-type: none;
   margin-top: -4px;
   column-gap: 2px;
+  overflow: hidden;
 }
 
 .education-description {
@@ -259,6 +273,7 @@ h3 {
   background: #fff;
   padding: 4px 10px;
   border-radius: 40px;
+  overflow: hidden;
 }
 
 .combine-interest-contact {
@@ -279,13 +294,21 @@ h3 {
   color: #fff;
 }
 
+.experiences-container {
+  grid-template-columns: calc(100% - 61px) 61px;
+}
+
+.education-container {
+  grid-template-columns: calc(100% - 15px) 11px;
+}
+
 @media screen and (max-width: 590px) {
   main {
     flex-direction: column;
   }
 
   footer {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
     row-gap: 20px;
   }
 
@@ -299,6 +322,7 @@ h3 {
 
   .container-tools {
     padding: 12px;
+    width: 100%;
   }
 
   .tools-list {
