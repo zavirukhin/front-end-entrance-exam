@@ -22,9 +22,8 @@ function createMatRipplePoint(targetElement, x, y) {
 }
 
 function showMatRipple(clickEvent) {
-  console.log(clickEvent);
-  const x = clickEvent.layerX;
-  const y = clickEvent.layerY;
+  const x = clickEvent.pageX - clickEvent.currentTarget.offsetLeft; 
+  const y = clickEvent.pageY - clickEvent.currentTarget.offsetTop; 
 
   const element = document.createElement("DIV");
   element.classList.add("mat-ripple-view");
