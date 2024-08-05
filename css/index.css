@@ -375,10 +375,10 @@ h3 {
 
 @media screen and (max-width: 370px) {
   .job-description {
-    grid-template-columns: auto auto;
+    grid-template-columns: 62px calc(100% - 62px);
   }
 
   .education-description {
-    grid-template-columns: auto;
+    grid-template-columns: 100%;
   }
 }
