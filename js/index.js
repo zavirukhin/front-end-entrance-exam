@@ -1,5 +1,6 @@
 const editableElements = document.getElementsByClassName("editable");
 const matRippleElement = document.getElementsByClassName("mat-ripple");
+const buttonDownload = document.getElementById("button-download");
 
 function eventHandler(event) {
   const target = event.target;
@@ -80,3 +81,5 @@ function exportPDF() {
     }
   })
 }
+
+buttonDownload.addEventListener("click", exportPDF);
