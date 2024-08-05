@@ -15,8 +15,13 @@ header {
   margin-bottom: 20px;
 }
 
-header > img {
+.container-image, .container-image > img {
   height: 124px;
+}
+
+.container-image {
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .container-cv, .container-languages {
@@ -60,6 +65,7 @@ h3 {
   padding: 12px;
   background: #F0F0F0;
   border-radius: 12px;
+  overflow: hidden;
 }
 
 .container-cv {
@@ -138,6 +144,7 @@ h3 {
   padding: 8px;
   flex-direction: column;
   background: #fff;
+  overflow: hidden;
 }
 
 .experiences-list > .container-small:first-of-type, .education-wrapper:first-of-type > .container-small {
@@ -287,6 +294,7 @@ h3 {
   background: #000;
   color: #fff;
   gap: 11px;
+  flex: 1;
 }
 
 .container-contact > a {
