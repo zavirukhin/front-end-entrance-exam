@@ -310,6 +310,21 @@ h3 {
   grid-template-columns: calc(100% - 15px) 11px;
 }
 
+.button-download {
+  position: fixed;
+  bottom: 8px;
+  right: 8px;
+  display: flex;
+  background: #28D979;
+  border: unset;
+  border-radius: 10px;
+  height: 32px;
+  width: 32px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 590px) {
   main {
     flex-direction: column;

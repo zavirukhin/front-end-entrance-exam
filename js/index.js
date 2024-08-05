@@ -49,3 +49,34 @@ function showMatRipple(clickEvent) {
 
   createMatRipplePoint(element, x, y);
 }
+
+function exportPDF() {
+  const body = document.body
+  const html = document.documentElement;
+  const height = Math.max(
+    body.scrollHeight, 
+    body.offsetHeight,
+    html.clientHeight, 
+    html.scrollHeight, 
+    html.offsetHeight,
+  );
+
+  const width = Math.max(
+    body.scrollWidth,
+    body.offsetWidth,
+    html.clientWidth,
+    html.scrollWidth,
+    html.offsetWidth,
+  );
+
+  html2pdf(body, {
+    margin: 1,
+    filename: "CV.pdf",
+    html2canvas: { dpi: 192, letterRendering: true },
+    jsPDF: {
+      orientation: "portrait",
+      unit: "px",
+      format: [width, height]
+    }
+  })
+}
