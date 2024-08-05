@@ -52,6 +52,7 @@ function showMatRipple(clickEvent) {
 }
 
 function exportPDF() {
+  window.scrollTo(0, 0);
   buttonDownload.style.display = "none";
   const body = document.body
   const html = document.documentElement;
@@ -59,17 +60,18 @@ function exportPDF() {
     body.scrollHeight, 
     body.offsetHeight,
     html.clientHeight, 
-    html.scrollHeight, 
+    html.scrollHeight,
     html.offsetHeight,
   );
 
   html2pdf(body, {
     margin: 1,
     filename: "CV.pdf",
-    html2canvas: { dpi: 192, letterRendering: true },
+    html2canvas: { dpi: 300, letterRendering: true },
     jsPDF: {
       orientation: "portrait",
       unit: "px",
+      html2canvas: { scale: 1, scrollY: 0 },
       format: [595, height]
     }
   })
