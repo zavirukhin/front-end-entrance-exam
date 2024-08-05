@@ -325,6 +325,10 @@ h3 {
   cursor: pointer;
 }
 
+.editable, .container {
+  transition: all .3s ease-in-out;
+}
+
 .editable:focus {
   outline: 0;
   outline-color: transparent;
