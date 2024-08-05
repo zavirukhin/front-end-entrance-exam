@@ -326,7 +326,7 @@ h3 {
 }
 
 .editable, .container {
-  transition: all .3s ease-in-out;
+  transition: box-shadow, padding, background, font-weight .3s ease-in-out;
 }
 
 .editable:focus {
