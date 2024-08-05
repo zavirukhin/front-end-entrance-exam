@@ -75,6 +75,7 @@ function exportPDF() {
       format: [595, height]
     }
   })
+  .save()
   .then(() => buttonDownload.style.display = "");
 }
 
