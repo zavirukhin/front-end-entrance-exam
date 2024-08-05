@@ -6,6 +6,24 @@ function eventHandler(event) {
   localStorage.setItem(this.context, target.innerText);
 }
 
+for (const element of matRippleElement) {
+  const handler = showMatRipple.bind({ context: element });
+  element.addEventListener("click", handler);
+}
+
+for (let i = 0; i < editableElements.length; i++) {
+  const elementId = 'editable-' + i;
+  const element = editableElements[i];
+
+  const storage = localStorage.getItem(elementId);
+  if (storage !== null) {
+    if (element.tagName === "A") element.href = "mailto:" + storage;
+    element.innerText = storage;
+  }
+
+  element.addEventListener("input", eventHandler.bind({ context: elementId }));
+}
+
 function createMatRipplePoint(targetElement, x, y) {
   const boundry = targetElement.getBoundingClientRect();
   const sizePoint = Math.max(boundry.width, boundry.height) / 5;
@@ -30,22 +48,4 @@ function showMatRipple(clickEvent) {
   this.context.appendChild(element);
 
   createMatRipplePoint(element, x, y);
-}
-
-for (const element of matRippleElement) {
-  const handler = showMatRipple.bind({ context: element });
-  element.addEventListener("click", handler);
-}
-
-for (let i = 0; i < editableElements.length; i++) {
-  const elementId = 'editable-' + i;
-  const element = editableElements[i];
-
-  const storage = localStorage.getItem(elementId);
-  if (storage !== null) {
-    if (element.tagName === "A") element.href = "mailto:" + storage;
-    element.innerText = storage;
-  }
-
-  element.addEventListener("input", eventHandler.bind({ context: elementId }));
 }
