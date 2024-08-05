@@ -62,14 +62,6 @@ function exportPDF() {
     html.offsetHeight,
   );
 
-  const width = Math.max(
-    body.scrollWidth,
-    body.offsetWidth,
-    html.clientWidth,
-    html.scrollWidth,
-    html.offsetWidth,
-  );
-
   html2pdf(body, {
     margin: 1,
     filename: "CV.pdf",
@@ -77,7 +69,7 @@ function exportPDF() {
     jsPDF: {
       orientation: "portrait",
       unit: "px",
-      format: [width, height]
+      format: [595, height]
     }
   })
 }
