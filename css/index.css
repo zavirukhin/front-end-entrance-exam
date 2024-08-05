@@ -328,7 +328,7 @@ h3 {
 .editable, .container {
   transition-duration: .3s;
   transition-timing-function: ease-in-out;
-  transition-property: box-shadow padding background font-weight;
+  transition-property: box-shadow, padding, background, font-weight;
 }
 
 .editable:focus {

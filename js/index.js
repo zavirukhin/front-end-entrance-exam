@@ -1,13 +1,14 @@
 const editableElements = document.getElementsByClassName("editable");
-const matRippleElement = document.getElementsByClassName("mat-ripple");
+const matRippleElements = document.getElementsByClassName("mat-ripple");
 const buttonDownload = document.getElementById("button-download");
+const animationElements = document.querySelectorAll(".editable, .container");
 
 function eventHandler(event) {
   const target = event.target;
   localStorage.setItem(this.context, target.innerText);
 }
 
-for (const element of matRippleElement) {
+for (const element of matRippleElements) {
   const handler = showMatRipple.bind({ context: element });
   element.addEventListener("click", handler);
 }
@@ -51,7 +52,16 @@ function showMatRipple(clickEvent) {
   createMatRipplePoint(element, x, y);
 }
 
+function offAnimation() {
+  for (const element of animationElements) element.style.transition = "none";
+}
+
+function onAnimation() {
+  for (const element of animationElements) element.style.transition = "";
+}
+
 function exportPDF() {
+  offAnimation();
   buttonDownload.style.display = "none";
   const body = document.body
   const html = document.documentElement;
@@ -80,7 +90,10 @@ function exportPDF() {
       format: [595, height + 50],
     }
   })
-  .then(() => buttonDownload.style.display = "");
+  .then(() => {
+    buttonDownload.style.display = "";
+    onAnimation();
+  });
 }
 
 buttonDownload.addEventListener("click", exportPDF);
