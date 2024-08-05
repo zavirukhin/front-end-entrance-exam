@@ -52,6 +52,7 @@ function showMatRipple(clickEvent) {
 }
 
 function exportPDF() {
+  buttonDownload.style.display = "none";
   const body = document.body
   const html = document.documentElement;
   const height = Math.max(
@@ -72,6 +73,7 @@ function exportPDF() {
       format: [595, height]
     }
   })
+  .then(() => buttonDownload.style.display = "");
 }
 
 buttonDownload.addEventListener("click", exportPDF);
