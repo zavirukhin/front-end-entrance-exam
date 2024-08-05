@@ -37,7 +37,7 @@ function createMatRipplePoint(targetElement, x, y) {
   matPoint.style.height = sizePoint + "px";
 
   targetElement.appendChild(matPoint);
-  matPoint.addEventListener("animationend", targetElement.remove);
+  matPoint.addEventListener("animationend", () => targetElement.remove());
 }
 
 function showMatRipple(clickEvent) {

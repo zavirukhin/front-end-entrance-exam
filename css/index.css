@@ -325,6 +325,21 @@ h3 {
   cursor: pointer;
 }
 
+.editable {
+  background: transparent;
+  transition: all .3s ease-in-out;
+}
+
+.editable:focus {
+  outline: 0;
+  outline-color: transparent;
+  outline-style: none;
+  background: #C2C666;
+  padding: 4px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
 @media screen and (max-width: 590px) {
   main {
     flex-direction: column;
