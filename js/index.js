@@ -18,7 +18,7 @@ function createMatRipplePoint(targetElement, x, y) {
   matPoint.style.height = sizePoint + "px";
 
   targetElement.appendChild(matPoint);
-  matPoint.addEventListener("animationend", (e) => targetElement.remove());
+  matPoint.addEventListener("animationend", targetElement.remove);
 }
 
 function showMatRipple(clickEvent) {
@@ -43,7 +43,7 @@ for (let i = 0; i < editableElements.length; i++) {
 
   const storage = localStorage.getItem(elementId);
   if (storage !== null) {
-    if (element.tagName === 'A') element.href = "mailto:" + storage;
+    if (element.tagName === "A") element.href = "mailto:" + storage;
     element.innerText = storage;
   }
 
