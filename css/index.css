@@ -303,7 +303,7 @@ h3 {
 }
 
 .experiences-container {
-  grid-template-columns: calc(100% - 61px) 61px;
+  grid-template-columns: calc(100% - 65px) 61px;
 }
 
 .education-container {
@@ -326,7 +326,6 @@ h3 {
 }
 
 .editable {
-  background: transparent;
   transition: all .3s ease-in-out;
 }
 
